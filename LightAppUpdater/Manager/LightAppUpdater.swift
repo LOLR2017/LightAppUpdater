@@ -26,6 +26,9 @@ class LightAppUpdater: NSObject {
        let con = URLSessionConfiguration.default
         let session = URLSession.init(configuration: con)
         return session
+        
+        
+        
     }()
 
     func request_getAppUpdate(_ path:String,params:[String:Any],withMethod method:RequestType,isHandle:Bool, success:@escaping (_ responseData:[String:Any],_ isUpdate:Bool)->Void,failure:@escaping (_ error:Error)->Void) -> Void {
