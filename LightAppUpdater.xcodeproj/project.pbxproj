@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		891431331F5F8E0000173BD3 /* LightAppUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891431321F5F8E0000173BD3 /* LightAppUpdater.swift */; };
 		899EAA741F5D4EE7004E2C2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899EAA731F5D4EE7004E2C2D /* AppDelegate.swift */; };
 		899EAA761F5D4EE7004E2C2D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899EAA751F5D4EE7004E2C2D /* ViewController.swift */; };
 		899EAA791F5D4EE7004E2C2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 899EAA771F5D4EE7004E2C2D /* Main.storyboard */; };
 		899EAA7B1F5D4EE7004E2C2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 899EAA7A1F5D4EE7004E2C2D /* Assets.xcassets */; };
 		899EAA7E1F5D4EE7004E2C2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 899EAA7C1F5D4EE7004E2C2D /* LaunchScreen.storyboard */; };
-		899EAA871F5D4F3E004E2C2D /* TLH_NetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899EAA861F5D4F3E004E2C2D /* TLH_NetWorkManager.swift */; };
 		89E8B2D91F5E7208007B57C9 /* TLH_HitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E8B2D81F5E7208007B57C9 /* TLH_HitView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		891431321F5F8E0000173BD3 /* LightAppUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightAppUpdater.swift; sourceTree = "<group>"; };
 		899EAA701F5D4EE7004E2C2D /* LightAppUpdater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LightAppUpdater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		899EAA731F5D4EE7004E2C2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		899EAA751F5D4EE7004E2C2D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,7 +25,6 @@
 		899EAA7A1F5D4EE7004E2C2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		899EAA7D1F5D4EE7004E2C2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		899EAA7F1F5D4EE7004E2C2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		899EAA861F5D4F3E004E2C2D /* TLH_NetWorkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLH_NetWorkManager.swift; sourceTree = "<group>"; };
 		89E8B2D81F5E7208007B57C9 /* TLH_HitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLH_HitView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,7 +72,7 @@
 		899EAA851F5D4F23004E2C2D /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				899EAA861F5D4F3E004E2C2D /* TLH_NetWorkManager.swift */,
+				891431321F5F8E0000173BD3 /* LightAppUpdater.swift */,
 				89E8B2D81F5E7208007B57C9 /* TLH_HitView.swift */,
 			);
 			path = Manager;
@@ -153,7 +153,7 @@
 			files = (
 				899EAA761F5D4EE7004E2C2D /* ViewController.swift in Sources */,
 				899EAA741F5D4EE7004E2C2D /* AppDelegate.swift in Sources */,
-				899EAA871F5D4F3E004E2C2D /* TLH_NetWorkManager.swift in Sources */,
+				891431331F5F8E0000173BD3 /* LightAppUpdater.swift in Sources */,
 				89E8B2D91F5E7208007B57C9 /* TLH_HitView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
