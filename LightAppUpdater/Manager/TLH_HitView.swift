@@ -10,9 +10,9 @@ import UIKit
 
 typealias resultBlock = (_ isUpdate:Bool) -> Void
 
-class TLH_HitView: UIView {
+open class TLH_HitView: UIView {
 
-    public var block:resultBlock?
+    private var block:resultBlock?
     public var backView:UIView?
     public var titleLabel:UILabel?
     public var contentLabel:UILabel?

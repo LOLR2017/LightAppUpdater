@@ -14,7 +14,7 @@ enum RequestType {
 }
 
 
-class LightAppUpdater: NSObject {
+open class LightAppUpdater: NSObject {
     
     public var requestPath:String = "http://192.168.0.251:8080/"
     
