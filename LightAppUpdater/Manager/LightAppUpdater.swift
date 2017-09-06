@@ -9,7 +9,7 @@
 import UIKit
 
 
-enum RequestType {
+public enum RequestType {
     case Post
 }
 
@@ -18,11 +18,11 @@ open class LightAppUpdater: NSObject {
     
     public var requestPath:String = "http://192.168.0.251:8080/"
     
-    static let shareManager:LightAppUpdater = {
+    open static let shareManager:LightAppUpdater = {
        return LightAppUpdater()
     }()
     
-    static let sessionManager:URLSession = {
+    open static let sessionManager:URLSession = {
        let con = URLSessionConfiguration.default
         let session = URLSession.init(configuration: con)
         return session
@@ -31,7 +31,7 @@ open class LightAppUpdater: NSObject {
         
     }()
 
-    func request_getAppUpdate(_ path:String,params:[String:Any],withMethod method:RequestType,isHandle:Bool, success:@escaping (_ responseData:[String:Any],_ isUpdate:Bool)->Void,failure:@escaping (_ error:Error)->Void) -> Void {
+    open func request_getAppUpdate(_ path:String,params:[String:Any],withMethod method:RequestType,isHandle:Bool, success:@escaping (_ responseData:[String:Any],_ isUpdate:Bool)->Void,failure:@escaping (_ error:Error)->Void) -> Void {
         
         let url = URL.init(string: self.requestPath+path)
         var request = URLRequest.init(url: url!)

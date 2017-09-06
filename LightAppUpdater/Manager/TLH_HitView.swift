@@ -8,11 +8,11 @@
 
 import UIKit
 
-typealias resultBlock = (_ isUpdate:Bool) -> Void
+public typealias resultBlock = (_ isUpdate:Bool) -> Void
 
 open class TLH_HitView: UIView {
 
-    private var block:resultBlock?
+    public var block:resultBlock?
     public var backView:UIView?
     public var titleLabel:UILabel?
     public var contentLabel:UILabel?
@@ -24,7 +24,7 @@ open class TLH_HitView: UIView {
     public var content:String = ""
     public var isForce:Bool = false
     
-    static let shareHitView:TLH_HitView = {
+    open static let shareHitView:TLH_HitView = {
         let view = TLH_HitView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
         view.isUserInteractionEnabled = true
@@ -35,7 +35,7 @@ open class TLH_HitView: UIView {
        return view
     }()
     
-    func show(_ view:UIView?,inView superView:UIView?,success:@escaping resultBlock) -> Void {
+    open func show(_ view:UIView?,inView superView:UIView?,success:@escaping resultBlock) -> Void {
         block = success
         var contentView = view
         var sView = superView
