@@ -8,16 +8,18 @@
 
 import UIKit
 
+
 enum RequestType {
     case Post
 }
 
-class TLH_NetWorkManager: NSObject {
+
+class LightAppUpdater: NSObject {
     
     public var requestPath:String = "http://192.168.0.251:8080/"
     
-    static let shareManager:TLH_NetWorkManager = {
-       return TLH_NetWorkManager()
+    static let shareManager:LightAppUpdater = {
+       return LightAppUpdater()
     }()
     
     static let sessionManager:URLSession = {
@@ -45,7 +47,7 @@ class TLH_NetWorkManager: NSObject {
             request.httpBody = paramData
         }
         
-        let task = TLH_NetWorkManager.sessionManager.dataTask(with: request) { (data, response, error) in
+        let task = LightAppUpdater.sessionManager.dataTask(with: request) { (data, response, error) in
             
             if error == nil {
                     let responseData = try?JSONSerialization.jsonObject(with: data!, options:JSONSerialization.ReadingOptions.allowFragments) as! [String:Any]

@@ -15,8 +15,8 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "LinghtAppUpdater"
-  s.version      = "0.0.1"
+  s.name         = "LightAppUpdater"
+  s.version      = "0.0.2"
   s.summary      = "一款简单APP更新提醒"
 
   # This description is used to generate tags and improve search results.
