@@ -81,6 +81,11 @@ open class LightAppUpdater: NSObject,URLSessionDelegate {
                                 })
                             }
                         }
+                        else {
+                            DispatchQueue.main.async {
+                                success(responseData!, false)
+                            }
+                        }
                     }
                     else {
                         DispatchQueue.main.async {
