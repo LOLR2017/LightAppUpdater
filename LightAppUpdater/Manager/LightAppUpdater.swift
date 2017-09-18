@@ -61,29 +61,34 @@ open class LightAppUpdater: NSObject,URLSessionDelegate {
             
             if error == nil {
                     let responseData = try?JSONSerialization.jsonObject(with: data!, options:JSONSerialization.ReadingOptions.allowFragments) as! [String:Any]
-                    print(response!)
-                    print(responseData!)
-                if Int(responseData?["version"] as! NSNumber) == self.version {
-                    success(responseData!,false)
+                
+                if responseData == nil {
+                    return
+                }
+                if responseData?["version"] != nil {
+                    if Int(responseData?["version"] as! NSNumber) == self.version {
+                        success(responseData!,false)
+                    }
                 }
                 else {
                     if isHandle {
-                        
-                        if responseData?["needUpdate"] as! NSNumber == 1 && responseData?["appStatus"] as! NSNumber == 2 {
-                            
-                            TLH_HitView.shareHitView.content = responseData?["updateInfo"] as! String
-                            if responseData?["lastForce"] as! NSNumber == 1 {
-                                TLH_HitView.shareHitView.isForce = true
+                        if responseData?["neesUpdate"] != nil && responseData?["appStatus"] != nil {
+                            if responseData?["needUpdate"] as! NSNumber == 1 && responseData?["appStatus"] as! NSNumber == 2 {
+                                
+                                TLH_HitView.shareHitView.content = responseData?["updateInfo"] as! String
+                                if responseData?["lastForce"] as! NSNumber == 1 {
+                                    TLH_HitView.shareHitView.isForce = true
+                                }
+                                DispatchQueue.main.async {
+                                    TLH_HitView.shareHitView.show(nil, inView: nil, success: { (finish) in
+                                        success(responseData!,finish)
+                                    })
+                                }
                             }
-                            DispatchQueue.main.async {
-                                TLH_HitView.shareHitView.show(nil, inView: nil, success: { (finish) in
-                                    success(responseData!,finish)
-                                })
-                            }
-                        }
-                        else {
-                            DispatchQueue.main.async {
-                                success(responseData!, false)
+                            else {
+                                DispatchQueue.main.async {
+                                    success(responseData!, false)
+                                }
                             }
                         }
                     }
