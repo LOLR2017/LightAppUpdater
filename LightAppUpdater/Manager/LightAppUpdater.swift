@@ -15,11 +15,11 @@ struct IdentityAndTrust {
 }
 
 
-public enum RequestType {
+public enum RequestType:Int {
     case Post
 }
 
-open class LightAppUpdater: NSObject,URLSessionDelegate {
+@objc open class LightAppUpdater: NSObject, URLSessionDelegate {
     
     public var requestPath:String = "http://192.168.0.251:8080/"
     public var version:Int = 0
@@ -38,15 +38,17 @@ open class LightAppUpdater: NSObject,URLSessionDelegate {
         return session
     }()
 
-    open func request_getAppUpdate(_ path:String,params:[String:Any],withMethod method:RequestType,isHandle:Bool, success:@escaping (_ responseData:[String:Any],_ isUpdate:Bool)->Void,failure:@escaping (_ error:Error)->Void) -> Void {
+    @objc open func request_getAppUpdate(_ path:String,params:[String:Any],withMethod method:Int,isHandle:Bool, success:@escaping (_ responseData:[String:Any],_ isUpdate:Bool)->Void,failure:@escaping (_ error:Error)->Void) -> Void {
         
         let url = URL.init(string: self.requestPath+path)
         var request = URLRequest.init(url: url!)
         let list = NSMutableArray()
         if params.count > 0 {
             switch method {
-            case .Post:
+            case 1:
                 request.httpMethod = "POST"
+            default:
+                break
             }
             for subDic in params {
                 let temStr = "\(subDic.0)=\(subDic.1)"
@@ -66,13 +68,8 @@ open class LightAppUpdater: NSObject,URLSessionDelegate {
                     return
                 }
                 if responseData?["version"] != nil {
-                    if Int(responseData?["version"] as! NSNumber) == self.version {
-                        success(responseData!,false)
-                    }
-                }
-                else {
                     if isHandle {
-                        if responseData?["neesUpdate"] != nil && responseData?["appStatus"] != nil {
+                        if responseData?["needUpdate"] != nil && responseData?["appStatus"] != nil {
                             if responseData?["needUpdate"] as! NSNumber == 1 && responseData?["appStatus"] as! NSNumber == 2 {
                                 
                                 TLH_HitView.shareHitView.content = responseData?["updateInfo"] as! String
@@ -97,6 +94,7 @@ open class LightAppUpdater: NSObject,URLSessionDelegate {
                             success(responseData!, false)
                         }
                     }
+                    
                 }
             }
             else {
