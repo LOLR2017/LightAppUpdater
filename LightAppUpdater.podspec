@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "LightAppUpdater"
-  s.version      = "1.0.6"
+  s.version      = "1.0.7"
   s.summary      = "一款简单APP更新提醒"
 
   # This description is used to generate tags and improve search results.

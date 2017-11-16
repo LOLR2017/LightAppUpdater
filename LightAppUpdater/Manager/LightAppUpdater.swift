@@ -19,7 +19,7 @@ public enum RequestType:Int {
     case Post
 }
 
-@objc open class LightAppUpdater: NSObject, URLSessionDelegate {
+@objc open class LightAppUpdater:NSObject, URLSessionDelegate {
     
     public var requestPath:String = "http://192.168.0.251:8080/"
     public var version:Int = 0
@@ -33,7 +33,8 @@ public enum RequestType:Int {
     
     open static let sessionManager:URLSession = {
        let con = URLSessionConfiguration.default
-        let session = URLSession.init(configuration: con, delegate: self as? URLSessionDelegate, delegateQueue: OperationQueue.main)
+        
+        let session = URLSession.init(configuration: con, delegate: self as? URLSessionDelegate , delegateQueue: OperationQueue.main)
         
         return session
     }()
