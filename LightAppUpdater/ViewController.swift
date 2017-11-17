@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        TLH_HitView.shareHitView.image = #imageLiteral(resourceName: "find")
         LightAppUpdater.shareManager.request_getAppUpdate("update/app/getVersion", params: ["appUnique":"com.tlh.QXTSimple","platform":"ios","version":"10"], withMethod: 1,isHandle:true, success: { (responseData,isUpdate) in
             
             if isUpdate {

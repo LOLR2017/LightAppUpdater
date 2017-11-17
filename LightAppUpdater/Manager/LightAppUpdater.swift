@@ -21,7 +21,7 @@ public enum RequestType:Int {
 
 @objc open class LightAppUpdater:NSObject, URLSessionDelegate {
     
-    public var requestPath:String = "http://192.168.0.251:8080/"
+    public var requestPath:String = "http://118.190.101.53:8899/"
     public var version:Int = 0
     public var PKCS12Data:CFData?
     public var keyPass:String = ""
