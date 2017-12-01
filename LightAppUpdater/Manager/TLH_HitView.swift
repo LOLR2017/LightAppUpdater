@@ -66,7 +66,7 @@ open class TLH_HitView: UIView {
     
     func createContentView() -> UIView {
         if backView == nil {
-            backView = UIView.init(frame: CGRect.init(x: 56, y: self.frame.height/2-150, width: self.frame.width-113, height: 300))
+            backView = UIView.init(frame: CGRect.init(x: self.frame.width/2-131, y: self.frame.height/2-150, width: 262, height: 300))
             backView?.backgroundColor = UIColor.white
             backView?.layer.cornerRadius = 4
             backView?.layer.masksToBounds = true
@@ -91,7 +91,7 @@ open class TLH_HitView: UIView {
             contentLabel?.sizeToFit()
             backView?.addSubview(contentLabel!)
             
-            backView?.frame = CGRect.init(x: self.frame.width/2-140, y: self.frame.height/2-150, width: 280, height: (contentLabel?.frame.maxY)!+70)
+            backView?.frame = CGRect.init(x:self.frame.width/2-131, y: self.frame.height/2-150, width: 262, height: (contentLabel?.frame.maxY)!+70)
             
             
             
