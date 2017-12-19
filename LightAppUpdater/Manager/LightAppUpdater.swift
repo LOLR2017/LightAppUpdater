@@ -6,6 +6,8 @@
 //  Copyright © 2017年 zhaowenlong. All rights reserved.
 //
 
+//当前版本1.0.10
+
 import UIKit
 
 struct IdentityAndTrust {
