@@ -131,14 +131,17 @@ open class TLH_HitView: UIView {
         return backView!
     }
     
-    func finishClick() -> Void {
+    @objc func finishClick() -> Void {
         if block != nil {
             block!(true)
         }
-        self.removeFromSuperview()
+        if !self.isForce {
+            self.removeFromSuperview()
+        }
+        
     }
     
-    func cancelClick() -> Void {
+    @objc func cancelClick() -> Void {
         self.removeFromSuperview()
         if block != nil {
             block!(false)
